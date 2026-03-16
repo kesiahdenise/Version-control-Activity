@@ -11,6 +11,12 @@
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.15);
     --accent-cyan: #724875;
+
+    --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --accent-cyan: #00d2ff;
+
     --text-soft: #e0f7fa;
   }
 
@@ -25,6 +31,24 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
+
+  /* --- Animated Background Bubbles --- */
+  .bubble {
+    position: fixed;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    animation: rise 15s infinite ease-in;
+  }
+
+  @keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    50% { opacity: 0.3; }
+    100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+  }
+
+
   /* --- Navbar --- */
   nav {
     backdrop-filter: blur(12px);
@@ -89,8 +113,13 @@
   }
   .card:hover { 
     transform: translateY(-15px) scale(1.02);
+
     border: 1px solid rgba(94, 53, 241, 0.897);
     box-shadow: 0 20px 40px rgba(141, 92, 221, 0.918);
+
+    border: 1px solid rgba(0, 210, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 210, 255, 0.15);
+
   }
   .card img { 
     width: 100%; 
@@ -124,8 +153,13 @@
   }
   button:hover { 
     background: var(--accent-cyan);
+
     color: #8d86ee;
     box-shadow: 0 0 20px rgba(111, 194, 212, 0.4);
+
+    color: #0f2027;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+
   }
 
   /* --- Modal --- */
@@ -134,14 +168,22 @@
     position: fixed;
     top:0; left:0;
     width:100%; height:100%;
+
     background: rgb(0, 25, 250);
+
+    background: rgba(10, 25, 30, 0.8);
+
     backdrop-filter: blur(12px);
     justify-content: center;
     align-items: center;
     z-index: 1000;
   }
   .modal-box {
+
     background: rgb(19, 128, 253);
+
+    background: rgba(255, 255, 255, 0.08);
+
     border: 1px solid var(--glass-border);
     padding: 40px;
     border-radius: 40px;
@@ -185,6 +227,7 @@
   <h2>The Underworld</h2>
   <div class="card-row">
     <div class="card">
+
       <img src="3.png" alt="SQUIDWARD">
       <div class="card-content">
         <h3>Octo family</h3>
@@ -203,6 +246,26 @@
       <div class="card-content">
         <h3>Shark family</h3>
         <button onclick="openModal('Pearl Krabs','The heartbeat of the ocean, ensuring the balance of life remains.')">View Details</button>
+
+      <img src="3.png" alt="Baby Shark">
+      <div class="card-content">
+        <h3>Octo family</h3>
+        <button onclick="openModal('Baby Shark','Navigating the shallow reefs with curiosity and grace.')">View Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="1.png" alt="Daddy Shark">
+      <div class="card-content">
+        <h3>Crab family</h3>
+        <button onclick="openModal('Daddy Shark','The silent guardian of the deep, patrolling the outer ridges.')">View Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="2.png" alt="Mommy Shark">
+      <div class="card-content">
+        <h3>Shark family</h3>
+        <button onclick="openModal('Mommy Shark','The heartbeat of the ocean, ensuring the balance of life remains.')">View Details</button>
+
       </div>
     </div>
   </div>
