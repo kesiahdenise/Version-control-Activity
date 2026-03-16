@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aquatic Life | Aesthetic Blue</title>
+
+<title>Aquatic Life | Aesthetic PINK </title>
 <style>
-  /* --- Blue Aesthetic Palette --- */
   :root {
     --bg-gradient: linear-gradient(135deg, #d393b8, #966f84, #ad33a7);
     --glass-bg: rgba(255, 255, 255, 0.05);
@@ -31,7 +31,6 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
   /* --- Animated Background Bubbles --- */
   .bubble {
     position: fixed;
@@ -49,7 +48,6 @@
   }
 
 
-  /* --- Navbar --- */
   nav {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -117,8 +115,13 @@
     border: 1px solid rgba(94, 53, 241, 0.897);
     box-shadow: 0 20px 40px rgba(141, 92, 221, 0.918);
 
+
+    border: 1px solid rgba(94, 53, 241, 0.897);
+    box-shadow: 0 20px 40px rgba(141, 92, 221, 0.918);
+
     border: 1px solid rgba(0, 210, 255, 0.4);
     box-shadow: 0 20px 40px rgba(0, 210, 255, 0.15);
+
 
   }
   .card img { 
@@ -157,6 +160,10 @@
     color: #8d86ee;
     box-shadow: 0 0 20px rgba(111, 194, 212, 0.4);
 
+
+    color: #8d86ee;
+    box-shadow: 0 0 20px rgba(111, 194, 212, 0.4);
+
     color: #0f2027;
     box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
 
@@ -168,6 +175,30 @@
     position: fixed;
     top:0; left:0;
     width:100%; height:100%;
+
+    background: rgb(0, 25, 250);
+    backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .modal-box {
+    background: rgb(19, 128, 253);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 40px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  }
+  .close {
+    cursor: pointer;
+    font-size: 30px;
+    float: right;
+    margin-top: -20px;
+    color: var(--accent-cyan);
+  }
+
 
     background: rgb(0, 25, 250);
 
@@ -199,6 +230,7 @@
     color: var(--accent-cyan);
   }
 
+
   /* --- Footer --- */
   footer {
     padding: 40px;
@@ -222,6 +254,31 @@
   <a href="#">Explore</a>
   <a href="#">Contact</a>
 </nav>
+
+
+<main>
+  <h2>The Underworld</h2>
+  <div class="card-row">
+    <div class="card">
+      <img src="3.png" alt="SQUIDWARD">
+      <div class="card-content">
+        <h3>Octo family</h3>
+        <button onclick="openModal('SQUIDWARD','A curious and graceful inhabitant of the shallow reefs.')">View Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="1.png" alt="MR. CRAB">
+      <div class="card-content">
+        <h3>Crab family</h3>
+        <button onclick="openModal('MR. CRAB','The silent guardian of the deep, patrolling the outer ridges.')">View Details</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="2.png" alt="Pearl Krabs">
+      <div class="card-content">
+        <h3>Shark family</h3>
+        <button onclick="openModal('Pearl Krabs','The heartbeat of the ocean, ensuring the balance of life remains.')">View Details</button>
+
 
 <main>
   <h2>The Underworld</h2>
@@ -271,6 +328,7 @@
   </div>
 </main>
 
+
 <div id="modal" class="modal">
   <div class="modal-box">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -280,6 +338,18 @@
 </div>
 
 <footer>© 2026 AQUATIC LIFE • ESTABLISHED IN THE DEPTHS</footer>
+
+
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle" style="color: var(--accent-cyan); font-weight: 300;"></h3>
+    <p id="modalText" style="line-height: 1.6;"></p>
+  </div>
+</div>
+
+<footer>© 2026 AQUATIC LIFE • ESTABLISHED IN THE DEPTHS</footer>
+
 
 <script>
 function openModal(title, text){
